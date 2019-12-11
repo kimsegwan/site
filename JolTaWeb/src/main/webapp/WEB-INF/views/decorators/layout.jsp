@@ -26,7 +26,12 @@
 	</div> -->
 	<!-- UI Object -->
 	<div id="header">
-		
+		<div class="top_menu_box">
+			<div class="top_menu">메뉴1</div>
+			<div class="top_menu">메뉴2</div>
+			<div class="top_menu">메뉴3</div>
+			<div class="top_menu">메뉴4</div>
+		</div>
 	</div>
 		
 	<!-- container -->
@@ -37,7 +42,10 @@
 	<!-- //container -->
 	<!-- footer -->
 	<div id="footer">
-		
+		<div class="footer_info_box">
+			<div></div>
+			<div></div>
+		</div>
 	</div>
 	<!-- //footer -->
 	
