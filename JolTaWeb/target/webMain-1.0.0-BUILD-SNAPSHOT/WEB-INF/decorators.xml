@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/WEB-INF/views/decorators">
+	
+	<excludes>
+		<pattern>/popup/*</pattern>
+	</excludes>
+	
+	<decorator name="sitemeshSample" page="layout.jsp">
+		<pattern>/**</pattern>
+	</decorator>
+	
+</decorators>
