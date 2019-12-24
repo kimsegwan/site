@@ -24,10 +24,11 @@
 	<!-- 자신의 PC에 MySql을 설치했을 경우
 		<property name="url"
 			value="jdbc:mysql://192.168.137.128:3306/test_db01?useSSL=false&amp;serverTimezone=UTC"></proerty>
-	 -->
-	 <!-- mybatis SqlSessionFactory Bean -->
-	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	 	<property name="dataSource" ref="dataSource"></property>
-	 </bean>
+	-->
+	
+	<!-- mybatis SqlSessionTemplate -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
 	
 </beans>
