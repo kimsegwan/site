@@ -1,7 +1,14 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <!DOCTYPE html>
 <!-- <html  onmousemove="fn_mouseMove(event);"> -->
+<%
+List<Map<String, Object>> menuList01 = (List<Map<String, Object>>)request.getAttribute("menuList01");
+List<Map<String, Object>> menuList02 = (List<Map<String, Object>>)request.getAttribute("menuList02");
+List<Map<String, Object>> menuList03 = (List<Map<String, Object>>)request.getAttribute("menuList03");
+%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -26,12 +33,16 @@
 	</div> -->
 	<!-- UI Object -->
 	<div id="header">
-		<div class="top_menu_box">
-			<div class="top_menu">메뉴1</div>
-			<div class="top_menu">메뉴2</div>
-			<div class="top_menu">메뉴3</div>
-			<div class="top_menu">메뉴4</div>
+		<div class="top_div" style="background-color:#77E56F;">
+			<div class="top_menu_box">
+				<%
+				for(int i=0; i<menuList01.size(); i++) {
+				%>
+				<div class="top_menu" style="width:<%=100/menuList01.size()%>%"><%=menuList01.get(i).get("MENU_NM")%></div>
+				<%} %>
+			</div>
 		</div>
+		<div style="border:1px solid black; width:70%; margin:0 auto; height:250px;"></div>
 	</div>
 		
 	<!-- container -->

@@ -26,21 +26,8 @@ public class WebMainController {
 	@RequestMapping(value="/webMain")
 	public String webMainMenuList(Model model, HttpServletRequest req) {
 		
-		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("1", "asdf");
-		
 		try {
-		
-			List<Map<String, Object>> list = webMainService.selectMenuInfo(params);
 			
-			for(int i=0; i<list.size(); i++) {
-				System.out.println("===========================");
-				System.out.println("===========================");
-				System.out.println(list.get(i).get("MENU_SN"));
-				System.out.println(list.get(i).get("MENU_GBN"));
-				System.out.println("===========================");
-				System.out.println("===========================");
-			}
 			
 		} catch(Exception e) {
 			e.printStackTrace();

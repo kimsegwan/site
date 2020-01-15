@@ -17,6 +17,7 @@
 			, UPPER_MENU_SN
 		FROM C_MENU_MSTR
 		WHERE 1=1
+		AND MENU_GBN = #{menuNo}
 		ORDER BY MENU_GBN, CAST(MENU_SN AS UNSIGNED)
 		]]>
 	</select>

@@ -3,7 +3,7 @@
 *{margin:0; padding:0;}
 
 /* body{width:70%; overflow:hidden; margin:auto;} */
-body{width:70%; margin:auto;}
+body{}
 
 
 #leftLayout{position:absolute; background:white; border:1px solid #999999; width:150px; text-align: center; line-height: 30px;}
@@ -17,12 +17,18 @@ body{width:70%; margin:auto;}
 }
 
 #header {
+	width:100%;
 	overflow: hidden;
 }
 
+.top_div {
+	
+}
+
 .top_menu_box {
-	margin-top: 35px;
-	width: 100%;
+	width:70%;
+	margin:0 auto;
+	padding-top: 35px;
 	overflow: hidden;
 }
 
