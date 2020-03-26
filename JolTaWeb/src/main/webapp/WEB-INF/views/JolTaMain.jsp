@@ -13,14 +13,14 @@
 </div>
 <script type="text/javascript">
 	var obj = document.querySelector('#runrun');
-	obj.style.right = '-100px';
+	obj.style.right = '-70px';
 	var time = setInterval(function() {
 		//console.log(obj.style.marginLeft === '' ? "500px" : obj.style.marginLeft);
 		//obj.style.marginLeft = (obj.style.marginLeft === '' ? "500px" : obj.style.marginLeft);
 		//console.log(obj.style.Left === undefined ? 200 : '2');
 		console.log(Number(window.innerWidth, 0) + '   ===   ' + Number(obj.style.right.replace('px', ''), 0))
 		if((Number(window.innerWidth, 0) + 30) <= Number(obj.style.right.replace('px', ''), 0)) {
-			obj.style.right = '-100px';
+			obj.style.right = '-70px';
 		}
 		
 		if(obj.style.backgroundPosition === 'left center') {
