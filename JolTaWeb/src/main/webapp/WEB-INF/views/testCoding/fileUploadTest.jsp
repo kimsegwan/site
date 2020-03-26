@@ -340,9 +340,11 @@ function fn_inputAccessFe() {
 </script>
 <title>Insert title here</title>
 </head>
-<div style="position:relative;">
+<div style="position:relative; margin:0 auto;">
 	<input type="file" id="file" style="display:none;"/>
+	
 	<div class="file_upload_box">
+	<div class="test_title">파일업로드</div>
 		<div style="height:40px;">
 			<span style="float:right; margin-top:5px;">
 				<input type="image" value="파일넣기" src="/images/searchF_btn.png" style="width:60px; height:30px;" onclick="fn_inputAccessFe();"/>

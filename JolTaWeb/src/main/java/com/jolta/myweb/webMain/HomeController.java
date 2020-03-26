@@ -115,7 +115,15 @@ public class HomeController {
 	public String fileUploadTest(Model model) {
 		
 		model.addAttribute("data-uploadto", UPLOAD_PATH);
-		return "fileUploadTest";
+		return "testCoding/fileUploadTest";
+	}
+	
+	@RequestMapping(value="/fileUploadComplete")
+	public String fileUploadComplete(Model model) {
+		
+		model.addAttribute("data-uploadto", UPLOAD_PATH);
+		model.addAttribute("msg", "업로드가 완료되었습니다.");
+		return "testCoding/fileUploadTest";
 	}
 	
 	@RequestMapping(value="/downloadFile") 

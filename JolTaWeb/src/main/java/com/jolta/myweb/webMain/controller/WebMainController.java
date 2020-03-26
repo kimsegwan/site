@@ -23,17 +23,16 @@ public class WebMainController {
 	@Resource(name="webMainService")
 	private WebMainService webMainService;
 	
-	@RequestMapping(value="/webMain")
-	public String webMainMenuList(Model model, HttpServletRequest req) {
+	@RequestMapping(value="/myIntoroduce")
+	public String myIntoroduce(Model model, HttpServletRequest req) {
 		
-		try {
-			
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+		return "introduce/myIntroduce";
+	}
+	
+	@RequestMapping(value="/carrerIntroduction")
+	public String carrerIntroduction(Model model, HttpServletRequest req) {
 		
-		return "home";
+		return "introduce/carrerIntroduction";
 	}
 	
 }
