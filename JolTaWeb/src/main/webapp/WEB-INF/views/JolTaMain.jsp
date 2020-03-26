@@ -7,20 +7,31 @@
 </head>
 <script type="text/javascript" src="/js/JolTaScript.js"></script>
 <div class="main_content">
-	<div>
+	<div class="road">
 		<span id="runrun"></span>
 	</div>
 </div>
 <script type="text/javascript">
 	var obj = document.querySelector('#runrun');
-	
+	obj.style.right = '-100px';
 	var time = setInterval(function() {
-		console.log(obj.style.backgroundPosition);
+		//console.log(obj.style.marginLeft === '' ? "500px" : obj.style.marginLeft);
+		//obj.style.marginLeft = (obj.style.marginLeft === '' ? "500px" : obj.style.marginLeft);
+		//console.log(obj.style.Left === undefined ? 200 : '2');
+		console.log(Number(window.innerWidth, 0) + '   ===   ' + Number(obj.style.right.replace('px', ''), 0))
+		if((Number(window.innerWidth, 0) + 30) <= Number(obj.style.right.replace('px', ''), 0)) {
+			obj.style.right = '-100px';
+		}
+		
 		if(obj.style.backgroundPosition === 'left center') {
 			obj.style.backgroundPosition = 'right center';
 		} else {
 			obj.style.backgroundPosition = 'left center';
 		}
+		//obj.style.marginLeft = (obj.style.marginLeft.replace('px', '')-10) + "px";
+		obj.style.right = (Number(obj.style.right.replace('px', ''), 0) + 10) + 'px'; 
+		
+		
 	}, 500);
 </script>
 </html>
