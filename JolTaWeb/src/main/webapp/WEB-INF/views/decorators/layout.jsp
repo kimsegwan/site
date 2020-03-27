@@ -159,8 +159,16 @@ function fn_menuClose(evnt) {
 }
 
 var data = [];
-//var latitude = '';
-//var longitude = ''; 
+
+var req = new XMLHttpRequest();
+
+console.log(obj);
+req.open('POST', '/accessInfo');
+req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+req.onreadystatechange = function() {
+	if(req.readyState === 4) return true; 
+}
 
 if(navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(function(ps){
@@ -177,26 +185,10 @@ if(navigator.geolocation) {
 		, maximumAge:300000
 		, timeout:5000
 	});
-	
-	access(data.join('&'));
-	
-} else {
-	access(null);
 }
 
-function access(obj) {
-	var req = new XMLHttpRequest();
-	
-	console.log(obj);
-	req.open('POST', '/accessInfo');
-	req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	
-	req.onreadystatechange = function() {
-		if(req.readyState === 4) return true; 
-	}
-	
-	req.send(obj);
-}
+req.send(data.join('&'));
+
 </script>
 </body>
 </html>
