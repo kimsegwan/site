@@ -36,7 +36,7 @@
 		)
 		VALUES
 		(
-			(SELECT IFNULL(MAX(CAM.ACES_SN), 0 ) + 1 FROM C_ACCESS_MSTR CAM)
+			(SELECT IFNULL(MAX(CAST(CAM.ACES_SN AS UNSIGNED)), 0 ) + 1 FROM C_ACCESS_MSTR CAM)
 			, #{regrIp}
 			, SYSDATE()
 			, #{latitude}

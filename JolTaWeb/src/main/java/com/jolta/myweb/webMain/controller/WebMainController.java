@@ -46,6 +46,7 @@ public class WebMainController {
 		params.put("longitude", req.getParameter("longitude"));
 		params.put("regrIp", req.getRemoteAddr());
 		params.put("url", req.getHeader("referer"));
+		params.put("remark", req.getParameter("remark"));
 		
 		try {
 			

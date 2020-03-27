@@ -160,35 +160,42 @@ function fn_menuClose(evnt) {
 
 var data = [];
 
-var req = new XMLHttpRequest();
-
-console.log(obj);
-req.open('POST', '/accessInfo');
-req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-req.onreadystatechange = function() {
-	if(req.readyState === 4) return true; 
-}
-
 if(navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(function(ps){
-		console.log(ps.coords.latitude + '    ==    ' + ps.coords.longitude);
-		//latitude = ps.coords.latitude;
-		//longitude = ps.coords.longitude;
+		
 		data.push('latitude=' + ps.coords.latitude);
 		data.push('longitude=' + ps.coords.longitude);
 		
+		access(data.join('&'));
+		
 	}, function(err) {
-		console.log(err);
+		
+		data.push('remark=' + err.msg);
+		access(data.join('&'));
+		
 	}, {
 		enableHighAccuracy:true
 		, maximumAge:300000
 		, timeout:5000
 	});
+	
+} else {
+	
+	access(null);
 }
 
-req.send(data.join('&'));
-
+function access(obj) {
+	var req = new XMLHttpRequest();
+	
+	req.open('POST', '/accessInfo');
+	req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	
+	req.onreadystatechange = function() {
+		if(req.readyState === 4) return true; 
+	}
+	
+	req.send(obj);
+}
 </script>
 </body>
 </html>
