@@ -170,7 +170,7 @@ if(navigator.geolocation) {
 		
 	}, function(err) {
 		
-		data.push('remark=' + err.msg);
+		data.push('remark=' + err.code);
 		access(data.join('&'));
 		
 	}, {
