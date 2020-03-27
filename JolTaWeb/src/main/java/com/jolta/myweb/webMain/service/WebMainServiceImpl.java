@@ -26,6 +26,9 @@ public class WebMainServiceImpl implements WebMainService {
 		return webMainDAO.selectMenuInfo(params);
 	}
 	
-	
+	@Override
+	public Object access(HashMap<String, String> param) throws Exception {
+		return webMainDAO.access(param);
+	}
 
 }

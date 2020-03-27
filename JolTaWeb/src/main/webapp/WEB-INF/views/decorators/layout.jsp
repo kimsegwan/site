@@ -141,7 +141,7 @@ function menuSubChange(obj) {
 }
 
 function fn_menuClose(evnt) {
-	console.log(evnt.target.id);
+	
 	if(evnt.target.id === "menu_top") {
 		return false;
 	}
@@ -156,6 +156,46 @@ function fn_menuClose(evnt) {
 	for(var i=0; i<arrObj.length; i++) {
 		arrObj[i].style.display = "none";
 	}
+}
+
+var data = [];
+//var latitude = '';
+//var longitude = ''; 
+
+if(navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(function(ps){
+		console.log(ps.coords.latitude + '    ==    ' + ps.coords.longitude);
+		//latitude = ps.coords.latitude;
+		//longitude = ps.coords.longitude;
+		data.push('latitude=' + ps.coords.latitude);
+		data.push('longitude=' + ps.coords.longitude);
+		
+	}, function(err) {
+		console.log(err);
+	}, {
+		enableHighAccuracy:true
+		, maximumAge:300000
+		, timeout:5000
+	});
+	
+	access(data.join('&'));
+	
+} else {
+	access(null);
+}
+
+function access(obj) {
+	var req = new XMLHttpRequest();
+	
+	console.log(obj);
+	req.open('POST', '/accessInfo');
+	req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	
+	req.onreadystatechange = function() {
+		if(req.readyState === 4) return true; 
+	}
+	
+	req.send(obj);
 }
 </script>
 </body>

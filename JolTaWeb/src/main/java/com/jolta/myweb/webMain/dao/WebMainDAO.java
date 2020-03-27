@@ -17,6 +17,10 @@ public class WebMainDAO extends AbstractDAO {
 		return (List<Map<String, Object>>)selectList("webmain.webMainMenuInfo", params);
 	}
 	
-	
+	public Object access(HashMap<String, String> params) {
+		
+		return insert("webmain.access", params); 
+
+	}
 	
 }

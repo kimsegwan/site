@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.naming.spi.DirStateFactory.Result;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -35,4 +36,25 @@ public class WebMainController {
 		return "introduce/carrerIntroduction";
 	}
 	
+	@RequestMapping(value="/accessInfo")
+	public String accessController(Model model, HttpServletRequest req) {
+		
+		HashMap<String, String> params = new HashMap<String, String>();
+		Object result = null;
+		
+		params.put("latitude", req.getParameter("latitude"));
+		params.put("longitude", req.getParameter("longitude"));
+		params.put("regrIp", req.getRemoteAddr());
+		params.put("url", req.getHeader("referer"));
+		
+		try {
+			
+			result = webMainService.access(params);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "JolTaMain";
+	}
 }

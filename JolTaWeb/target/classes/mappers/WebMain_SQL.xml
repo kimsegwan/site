@@ -22,4 +22,28 @@
 		]]>
 	</select>
 
+	<insert id="access" parameterType="hashmap">
+		<![CDATA[
+		INSERT INTO C_ACCESS_MSTR
+		(
+			ACES_SN
+			, REGR_IP
+			, REGR_DT
+			, LATITUDE
+			, LONGITUDE
+			, URL
+			, REMARK
+		)
+		VALUES
+		(
+			(SELECT IFNULL(MAX(CAM.ACES_SN), 0 ) + 1 FROM C_ACCESS_MSTR CAM)
+			, #{regrIp}
+			, SYSDATE()
+			, #{latitude}
+			, #{longitude}
+			, #{url}
+			, #{remark}
+		)
+		]]>
+	</insert>
 </mapper>

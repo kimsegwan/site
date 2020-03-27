@@ -7,5 +7,7 @@ import java.util.Map;
 public interface WebMainService {
 	
 	List<Map<String, Object>> selectMenuInfo(HashMap<String, String> params) throws Exception;
+	
+	Object access(HashMap<String, String> param) throws Exception;
 
 }
