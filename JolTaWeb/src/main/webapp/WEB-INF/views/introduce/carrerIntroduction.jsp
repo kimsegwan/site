@@ -39,7 +39,7 @@
 			<div class="tx_gap">
 				<span class="s_tx_b_style">주사용 기술 </span> 
 				<br/>
-				<span class="s_tx_style"> JAVA, JSP, HTML, CSS, JAVASCRIPT, JQUERY, ORACLE</span>
+				<span class="s_tx_style"> JAVA, JSP, HTML, CSS, JAVASCRIPT, JQUERY, ORACLE, EGOVFRAMEWORK</span>
 			</div>
 			<div class="tx_gap">
 				<span class="s_tx_b_style">주요업무내용</span>
@@ -61,7 +61,7 @@
 			<div class="tx_gap">
 				<span class="s_tx_b_style">주사용 기술 </span> 
 				<br/>
-				<span class="s_tx_style"> JAVA, JSP, HTML, CSS, JAVASCRIPT, JQUERY, ORACLE</span>
+				<span class="s_tx_style"> JAVA, JSP, HTML, CSS, JAVASCRIPT, JQUERY, ORACLE, EGOVFRAMEWORK</span>
 			</div>
 			<div class="tx_gap">
 				<span class="s_tx_b_style">주요업무내용</span>

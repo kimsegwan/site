@@ -5,17 +5,20 @@
 <!DOCTYPE html>
 <!-- <html  onmousemove="fn_mouseMove(event);"> -->
 <%
+@SuppressWarnings("unchecked")
 List<Map<String, Object>> menuList01 = (List<Map<String, Object>>)request.getAttribute("menuList01");
+@SuppressWarnings("unchecked")
 List<Map<String, Object>> menuList02 = (List<Map<String, Object>>)request.getAttribute("menuList02");
+@SuppressWarnings("unchecked")
 List<Map<String, Object>> menuList03 = (List<Map<String, Object>>)request.getAttribute("menuList03");
 %>
 <html onclick="javascript:fn_menuClose(event);">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Insert title here</title>
+<title>NONE</title>
 <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
-<link rel="stylesheet" href="./css/JolTaStyle.css">
+<link rel="stylesheet" href="/css/JolTaStyle.css">
 	<!-- header -->
 	<decorator:head></decorator:head>
 </head>

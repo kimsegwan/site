@@ -49,8 +49,14 @@ public class WebMainController {
 		params.put("remark", req.getParameter("remark"));
 		
 		try {
-			
-			result = webMainService.access(params);
+			System.out.println("====================");
+			System.out.println("====================");
+			System.out.println("IP : " + req.getRemoteAddr());
+			System.out.println("====================");
+			System.out.println("====================");
+			if(!"0:0:0:0:0:0:0:1".equals(req.getRemoteAddr()) && !"192.168.0.1".equals(req.getRemoteAddr())) {
+				result = webMainService.access(params);
+			}
 			
 		} catch(Exception e) {
 			e.printStackTrace();

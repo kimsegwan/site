@@ -47,11 +47,6 @@
 
 @media screen and (max-width: 660px) {
 
-	.intro_frame {
-		width:60%;
-		margin:80px auto;
-	}
-	
 	.intro_title {
 		font-size:28px;
 		margin-bottom:40px;
