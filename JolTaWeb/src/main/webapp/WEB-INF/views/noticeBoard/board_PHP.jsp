@@ -42,32 +42,10 @@ function fn_boardDtl(sn) {
 					<%for(int i=0; i<noticeBoardList.size(); i++) {%>
 					<div class="notice_box" onclick="javascript:fn_boardDtl('<%=noticeBoardList.get(i).get("CBM_DTL_SN")%>');">
 						<div class="subject"><%=noticeBoardList.get(i).get("CBM_DTL_SUBJECT")%></div>
-						<div class="content"><%=noticeBoardList.get(i).get("CBM_DTL_CONTENT")%></div>
+						<div class="other">등록자 : <%=noticeBoardList.get(i).get("REGR_ID")%> | 등록일 : <%=noticeBoardList.get(i).get("REGR_DT")%></div>
+						<div class="content"><%=noticeBoardList.get(i).get("CBM_DTL_CONTENT").replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "")%></div>
 					</div>
 					<%}%>
-				</div>
-				<div class="table_box">
-					<table>
-						<thead>
-							<colgroup>
-								<col width="10%">
-								<col width="70%">
-								<col width="20%">
-							</colgroup>
-							<tr>
-								<th>순번</th>
-								<th>글제목</th>
-								<th>작성자</th>
-							</tr>
-						</thead>
-					<%for(int i=0; i<noticeBoardList.size(); i++) {%>
-						<tr>
-							<td><%=noticeBoardList.size() - i%></td>
-							<td><%=noticeBoardList.get(i).get("CBM_DTL_SUBJECT")%></td>
-							<td><%=noticeBoardList.get(i).get("REGR_ID")%></td>
-						</tr>
-					<%}%>
-					</table>
 				</div>
 			</div>
 			<div class="notice_bottom">

@@ -14,8 +14,14 @@
 			<h1><%=noticeBoardDtl.get("CBM_SUBJECT")%></h1>
 		</div>
 		<div class="notice_body">
-			<%=noticeBoardDtl.get("CBM_DTL_SUBJECT")%>
-			<%=noticeBoardDtl.get("CBM_DTL_CONTENT")%>
+			<div class="detail">
+				<div class="detail_subject">
+					<%=noticeBoardDtl.get("CBM_DTL_SUBJECT")%>
+				</div>
+				<div class="detail_content">
+					<%=noticeBoardDtl.get("CBM_DTL_CONTENT")%>
+				</div>
+			</div>
 		</div>
 		<div class="notice_bottom">
 			

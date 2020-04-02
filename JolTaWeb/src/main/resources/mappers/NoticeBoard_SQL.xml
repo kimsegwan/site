@@ -56,9 +56,9 @@
 			, CBD.CBM_DTL_CONTENT
 			, CBD.USE_YN
 			, CBD.REGR_ID
-			, CBD.REGR_DT
+			, DATE_FORMAT(CBD.REGR_DT, '%Y-%m-%d') AS REGR_DT
 			, CBD.UPDR_ID
-			, CBD.UPD_DT
+			, DATE_FORMAT(CBD.UPD_DT, '%Y-%m-%d') AS UPD_DT
 		FROM 
 			C_BOARD_MSTR CBM
 			, C_BOARD_DTL CBD
@@ -72,6 +72,9 @@
 		<if test='cbmSn != null and cbmSn != ""'>
 			AND CBM.CBM_SN = #{cbmSn}
 		</if>
+		<![CDATA[
+		ORDER BY CBD.UPD_DT DESC
+		]]>
 	</select>
 
 </mapper>
