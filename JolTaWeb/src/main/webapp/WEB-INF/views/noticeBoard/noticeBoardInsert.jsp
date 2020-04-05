@@ -23,6 +23,7 @@
 					<span style="display:block; overflow:hidden; float:left; width:80%;">
 						<select name="cbmSn" id="cbmSn">
 							<option value="1">PHP</option>
+							<option value="2">CISCO</option>
 						</select>
 					</span>
 				</div>

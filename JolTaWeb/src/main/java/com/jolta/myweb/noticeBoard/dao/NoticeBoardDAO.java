@@ -12,9 +12,9 @@ import com.jolta.myweb.common.AbstractDAO;
 public class NoticeBoardDAO extends AbstractDAO {
 
 	@SuppressWarnings("unchecked")
-	public Map<String, String> selectPHPMstrInfo(HashMap<String, String> params) {
+	public Map<String, String> selectNoticeBoardMstrInfo(HashMap<String, String> params) {
 
-		return (Map<String, String>) selectOne("noticeBoard.selectPHPMstrInfo", params);
+		return (Map<String, String>) selectOne("noticeBoard.selectNoticeBoardMstrInfo", params);
 	}
 	
 	public Object noticeBoardInsert(HashMap<String, String> params) {
