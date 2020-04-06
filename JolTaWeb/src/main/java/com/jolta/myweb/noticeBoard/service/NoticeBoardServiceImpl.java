@@ -22,8 +22,8 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 	private NoticeBoardDAO noticeBoardDAO;
 	
 	@Override
-	public Map<String, String> selectPHPMstrInfo(HashMap<String, String> params) throws Exception {
-		return noticeBoardDAO.selectPHPMstrInfo(params);
+	public Map<String, String> selectNoticeBoardMstrInfo(HashMap<String, String> params) throws Exception {
+		return noticeBoardDAO.selectNoticeBoardMstrInfo(params);
 	}
 	
 	@Override

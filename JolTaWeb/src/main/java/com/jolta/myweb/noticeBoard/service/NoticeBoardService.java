@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface NoticeBoardService {
 	
-	Map<String, String> selectPHPMstrInfo(HashMap<String, String> params) throws Exception;
+	Map<String, String> selectNoticeBoardMstrInfo(HashMap<String, String> params) throws Exception;
 	
 	Object noticeBoardInsert(HashMap<String, String> params) throws Exception;
 	

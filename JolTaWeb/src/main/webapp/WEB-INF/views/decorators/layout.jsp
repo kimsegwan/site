@@ -163,7 +163,7 @@ function fn_menuClose(evnt) {
 
 var data = [];
 
-if(navigator.geolocation) {
+/*if(navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(function(ps){
 		
 		data.push('latitude=' + ps.coords.latitude);
@@ -185,7 +185,8 @@ if(navigator.geolocation) {
 } else {
 	
 	access(null);
-}
+}*/
+access(null);
 
 function access(obj) {
 	var req = new XMLHttpRequest();

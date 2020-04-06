@@ -34,11 +34,11 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 		HashMap<String, String> params = new HashMap<String, String>();
 		
 		try {
-			params.put("menuNo", "MD01");
+			params.put("menuGbn", "MD01");
 			List<Map<String, Object>> menuList01 = webMainService.selectMenuInfo(params);
-			params.put("menuNo", "MD02");
+			params.put("menuGbn", "MD02");
 			List<Map<String, Object>> menuList02 = webMainService.selectMenuInfo(params);
-			params.put("menuNo", "MD03");
+			params.put("menuGbn", "MD03");
 			List<Map<String, Object>> menuList03 = webMainService.selectMenuInfo(params);
 			
 			request.setAttribute("menuList01", menuList01);
