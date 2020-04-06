@@ -16,11 +16,11 @@
 		<div class="notice_body">
 			<div class="detail">
 				<div class="detail_subject">
-					<!-- <%=noticeBoardDtl.get("CBM_DTL_SUBJECT")%>-->
-					PHP를 시작하다.
+					<%=noticeBoardDtl.get("CBM_DTL_SUBJECT")%>
+					<!-- PHP를 시작하다. -->
 				</div>
 				<div class="detail_content">
-					<p>
+					<!-- <p>
 						PHP는 Personal Home Page에서 단어의 첫머리를 딴 약자에서 유래되었습니다.
 						정식 명칭은 [PHP: Hypertext Preprocessor]이며 사용자의 요청에 따라 웹에서 이용하는 HTML 등의
 						하이퍼텍스트(Hypertext) 문서를 동적으로 생성하여 화면을 빠르게 만들 수 있는 것이 장점입니다.
@@ -45,7 +45,7 @@
 						&nbsp;2. NetBeans<br/>
 							&nbsp;&nbsp;&nbsp;- 개발도구 IDE<br/>
 							&nbsp;&nbsp;&nbsp;- 설치 파일을 받아야 함.
-					</p>
+					</p> -->
 					<%=noticeBoardDtl.get("CBM_DTL_CONTENT")%>
 				</div>
 			</div>
