@@ -49,7 +49,9 @@ function fn_boardDtl(sn) {
 				</div>
 			</div>
 			<div class="notice_bottom">
+			<%if("admin".equals(request.getAttribute("admin"))) { %>
 				<input type="button" name="move" value="글등록" onclick="javascript:fn_noticeBoardS();"/>
+			<%} %>
 			</div>
 		</div>
 	</form>

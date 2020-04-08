@@ -17,6 +17,7 @@
 			<div class="detail">
 				<div class="detail_subject">
 					<%=noticeBoardDtl.get("CBM_DTL_SUBJECT")%>
+					<div class="other">등록자 : <%=noticeBoardDtl.get("REGR_ID")%> | 등록일 : <%=noticeBoardDtl.get("REGR_DT")%></div>
 				</div>
 				<br/>
 				<div class="detail_content">

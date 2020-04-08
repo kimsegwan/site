@@ -31,6 +31,10 @@ public class NoticeBoardController {
 		
 		params.put("cbmSn", "1");
 		
+		if("admin".equals(req.getParameter("admin"))) {
+			model.addAttribute("admin", "admin");
+		}
+		
 		try {
 			
 			Map<String, String> noticeInfo = noticeBoardService.selectNoticeBoardMstrInfo(params);
