@@ -146,6 +146,17 @@ a {
 	margin:100px auto;
 }
 
+.main_content .sub_name {
+	display:block;
+	width:100%;
+	text-align:center;
+	letter-spacing:10px;
+	font-weight:bold;
+	color:#f7f7f7;
+	font-size:40px;
+	background-color:lightgreen;
+}
+
 #runrun {
 	background:url('/images/myRun.png') no-repeat;
 	background-position:left;

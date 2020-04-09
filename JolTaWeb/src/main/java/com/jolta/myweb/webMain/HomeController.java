@@ -31,6 +31,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	private static final String UPLOAD_PATH = "C:\\jolTaWeb\\fileUpload";
 	private static final String DOWNLOAD_PATH = "C:\\jolTaWeb\\fileUpload";
+	private static final String DOWNLOAD_PATH_BOARD = "C:\\jolTaWeb\\boardFile";
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -145,4 +146,25 @@ public class HomeController {
 		response.getOutputStream().close();
 		
 	}
+	
+	@RequestMapping(value="/downloadFileNotice") 
+	public void downloadFileBoard(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		 System.out.println("============================");
+		String storedFileName = (String)request.getParameter("STORED_FILE_NAME");
+		String originalFileName = "";
+		byte fileByte[] = FileUtils.readFileToByteArray(new File(DOWNLOAD_PATH_BOARD + "\\" + storedFileName));
+		
+		originalFileName = "imageFile";
+		
+		response.setContentType("application/octet-stream"); 
+		response.setContentLength(fileByte.length); 
+		response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(originalFileName,"UTF-8")+"\";"); 
+		response.setHeader("Content-Transfer-Encoding", "binary");
+		
+		response.getOutputStream().write(fileByte); 
+		response.getOutputStream().flush(); 
+		response.getOutputStream().close();
+		
+	}
+	
 }
