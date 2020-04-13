@@ -6,7 +6,7 @@
 body{}
 
 a {
-	text-decoration: none;
+	text-decoration: none; 
 	color:#555555;
 	cursor:pointer;
 	width:100%;
@@ -27,6 +27,8 @@ a {
 #header {
 	width:100%;
 	overflow: hidden;
+	height:60px;
+	background-color:white;
 }
 
 #container {
@@ -143,26 +145,15 @@ a {
 
 .main_content {
 	width:100%;
-	margin:100px auto;
-}
-
-.main_content .sub_name {
-	display:block;
-	width:100%;
-	text-align:center;
-	letter-spacing:10px;
-	font-weight:bold;
-	color:#f7f7f7;
-	font-size:40px;
-	background-color:lightgreen;
+	margin:50px auto;
 }
 
 #runrun {
 	background:url('/images/myRun.png') no-repeat;
 	background-position:left;
 	display:block;
-	width:123px;
-	height:300px;
+	width:95px;
+	height:150px;
 	margin: 0 auto;
 	position:absolute;
 }
@@ -216,6 +207,6 @@ a {
 		background-size:146px 160px;
 		display:block;
 		width:73px;
-		height:160px;
+		height:150px;
 	}
 }

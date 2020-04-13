@@ -7,7 +7,6 @@
 </head>
 <script type="text/javascript" src="/js/JolTaScript.js"></script>
 <div class="main_content">
-	<div><span class="sub_name">내가 사는 세상</span></div>
 	<div class="road">
 		<span id="runrun"></span>
 	</div>

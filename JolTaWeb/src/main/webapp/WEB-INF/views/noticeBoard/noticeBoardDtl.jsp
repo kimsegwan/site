@@ -26,7 +26,6 @@
 			</div>
 		</div>
 		<div class="notice_bottom">
-			
 		</div>
 	</div>
 </body>

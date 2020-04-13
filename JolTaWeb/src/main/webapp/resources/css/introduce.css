@@ -2,7 +2,7 @@
 
 .intro_frame {
 	width:60%;
-	margin:130px auto;
+	margin:0 auto;
 }
 
 .myName {
@@ -55,7 +55,7 @@
 
 	.intro_frame {
 		width:90%;
-		margin:80px auto;
+		margin:0 auto;
 	}
 	
 	.intro_ymd {

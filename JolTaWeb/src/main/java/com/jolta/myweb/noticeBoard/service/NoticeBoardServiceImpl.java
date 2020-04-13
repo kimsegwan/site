@@ -27,6 +27,11 @@ public class NoticeBoardServiceImpl implements NoticeBoardService {
 	}
 	
 	@Override
+	public List<Map<String, String>> selectNoticeBoardMstrInfoList(HashMap<String, String> params) throws Exception {
+		return noticeBoardDAO.selectNoticeBoardMstrInfoList(params);
+	}
+	
+	@Override
 	public Object noticeBoardInsert(HashMap<String, String> params) {
 		return noticeBoardDAO.noticeBoardInsert(params);
 	}

@@ -47,14 +47,14 @@ public class NoticeBoardController {
 			e.printStackTrace();
 		}
 		
-		return "noticeBoard/board_PHP";
+		return "noticeBoard/board_main";
 	}
 	
 	@RequestMapping(value="/noticeBoard/noticeBoardInsert")
 	public String noticeBoardInsert(Model model, @RequestParam HashMap<String, String> params, HttpServletRequest req) {
 		
 		try {
-			Map<String, String> noticeInfo = noticeBoardService.selectNoticeBoardMstrInfo(params);
+			List<Map<String, String>> noticeInfoList = noticeBoardService.selectNoticeBoardMstrInfoList(params);
 			
 			if("insert".equals((String)params.get("gbn"))) {
 				
@@ -63,7 +63,7 @@ public class NoticeBoardController {
 				System.out.println(" result : " + result);
 			}
 			
-			model.addAttribute("noticeInfo", noticeInfo);
+			model.addAttribute("noticeInfoList", noticeInfoList);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -107,7 +107,29 @@ public class NoticeBoardController {
 			e.printStackTrace();
 		}
 		
-		return "noticeBoard/board_CISCO";
+		return "noticeBoard/board_main";
+	}
+	
+	@RequestMapping(value="/noticeBoard/LARAVEL")
+	public String noticeBoardLARAVEL(Model model, HttpServletRequest req) {
+		
+		HashMap<String, String> params = new HashMap<String, String>();
+		
+		params.put("cbmSn", "3");
+		
+		try {
+			
+			Map<String, String> noticeInfo = noticeBoardService.selectNoticeBoardMstrInfo(params);
+			List<Map<String, String>> noticeBoardList = noticeBoardService.selectNoticeBoardList(params);
+			
+			model.addAttribute("noticeInfo", noticeInfo);
+			model.addAttribute("noticeBoardList", noticeBoardList);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "noticeBoard/board_main";
 	}
 	
 }

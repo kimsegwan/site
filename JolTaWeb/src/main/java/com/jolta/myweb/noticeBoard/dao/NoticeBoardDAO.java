@@ -17,6 +17,12 @@ public class NoticeBoardDAO extends AbstractDAO {
 		return (Map<String, String>) selectOne("noticeBoard.selectNoticeBoardMstrInfo", params);
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Map<String, String>> selectNoticeBoardMstrInfoList(HashMap<String, String> params) {
+
+		return (List<Map<String, String>>) selectList("noticeBoard.selectNoticeBoardMstrInfo", params);
+	}
+	
 	public Object noticeBoardInsert(HashMap<String, String> params) {
 		
 		return insert("noticeBoard.noticeBoardInsert", params);

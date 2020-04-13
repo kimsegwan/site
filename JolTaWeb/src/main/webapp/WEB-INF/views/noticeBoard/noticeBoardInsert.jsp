@@ -1,10 +1,12 @@
+<%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
 	@SuppressWarnings("unchecked")
-	Map<String, String> noticeInfo = (Map<String, String>)request.getAttribute("noticeInfo");
+	List<Map<String, String>> noticeInfoList = (List<Map<String, String>>)request.getAttribute("noticeInfoList");
+
 %>
 
 <html>
@@ -15,15 +17,16 @@
 		<input type="hidden" name="gbn" id="gbn" value="insert"/>
 		<div class="notice_frame">
 			<div class="notice_header">
-				<h1><%=noticeInfo.get("CBM_SUBJECT")%></h1>
+				<h1>게시판 등록</h1>
 			</div>
 			<div class="notice_body">
 				<div style="float:left; width:100%; margin-top:15px;">
 					<span style="display:block; overflow:hidden; float:left;">종류</span>
 					<span style="display:block; overflow:hidden; float:left; width:80%;">
 						<select name="cbmSn" id="cbmSn">
-							<option value="1">PHP</option>
-							<option value="2">CISCO</option>
+							<%for(int i=0; i<noticeInfoList.size(); i++) {%>
+								<option value="<%=noticeInfoList.get(i).get("CBM_SN")%>"><%=noticeInfoList.get(i).get("CBM_SUBJECT")%></option>
+							<%}%>
 						</select>
 					</span>
 				</div>

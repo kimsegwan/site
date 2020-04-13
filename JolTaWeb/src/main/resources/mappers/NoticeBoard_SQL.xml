@@ -13,8 +13,11 @@
 			, UPDR_ID
 			, UPD_DT
 		FROM C_BOARD_MSTR
-		WHERE CBM_SN = #{cbmSn}
+		WHERE 1=1
 		]]>
+		<if test='cbmSn != null and cbmSn != ""'>
+			AND CBM_SN = #{cbmSn}
+		</if>
 	</select>
 	
 	<insert id="noticeBoardInsert" parameterType="hashmap">
@@ -38,9 +41,9 @@
 			, #{cbmDtlSubject}
 			, #{cbmDtlContent}
 			, 'Y'
-			, 'ADMIN'
+			, 'JOLTA'
 			, SYSDATE()
-			, 'ADMIN'
+			, 'JOLTA'
 			, SYSDATE()
 		)
 		]]>
