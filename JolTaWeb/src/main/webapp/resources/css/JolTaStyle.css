@@ -148,6 +148,15 @@ a {
 	margin:50px auto;
 }
 
+.main_content .text_box {
+		width:65%;
+		margin:0 auto;
+}
+
+.main_content .text_box p{
+	font-size:30px;
+}
+
 #runrun {
 	background:url('/images/myRun.png') no-repeat;
 	background-position:left;
@@ -201,6 +210,10 @@ a {
 	
 	.main_content {
 		margin-top:70px;
+	}
+	
+	.main_content .text_box p{
+		font-size:15px;
 	}
 	
 	#runrun {

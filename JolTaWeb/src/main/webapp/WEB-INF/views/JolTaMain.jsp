@@ -7,6 +7,10 @@
 </head>
 <script type="text/javascript" src="/js/JolTaScript.js"></script>
 <div class="main_content">
+	<div class="text_box">
+		<p>조급해 하지마 마지막은 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;언제나 우리를 기다리고 있으니까</p><br/>
+		<p style="float:right;">욕심내지마 욕심을 내면 오히려<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 마이너스가 될테니까</p>
+	</div>
 	<div class="road">
 		<span id="runrun"></span>
 	</div>

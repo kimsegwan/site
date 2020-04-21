@@ -36,7 +36,7 @@
 		)
 		VALUES
 		(
-			(SELECT IFNULL(MAX(CBD.CBM_DTL_SN),0) + 1 FROM C_BOARD_DTL CBD)
+			(SELECT IFNULL(MAX(CAST(CBD.CBM_DTL_SN AS UNSIGNED)),0) + 1 FROM C_BOARD_DTL CBD)
 			, #{cbmSn}
 			, #{cbmDtlSubject}
 			, #{cbmDtlContent}
