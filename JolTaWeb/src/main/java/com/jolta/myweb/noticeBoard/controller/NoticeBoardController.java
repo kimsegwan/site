@@ -132,4 +132,26 @@ public class NoticeBoardController {
 		return "noticeBoard/board_main";
 	}
 	
+	@RequestMapping(value="/noticeBoard/VUEJS")
+	public String noticeBoardVUEJS(Model model, HttpServletRequest req) {
+		
+		HashMap<String, String> params = new HashMap<String, String>();
+		
+		params.put("cbmSn", "4");
+		
+		try {
+			
+			Map<String, String> noticeInfo = noticeBoardService.selectNoticeBoardMstrInfo(params);
+			List<Map<String, String>> noticeBoardList = noticeBoardService.selectNoticeBoardList(params);
+			
+			model.addAttribute("noticeInfo", noticeInfo);
+			model.addAttribute("noticeBoardList", noticeBoardList);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "noticeBoard/board_main";
+	}
+	
 }

@@ -52,9 +52,11 @@ public class WebMainController {
 			System.out.println("====================");
 			System.out.println("====================");
 			System.out.println("IP : " + req.getRemoteAddr());
+			System.out.println("192.168".indexOf(req.getRemoteAddr().toString()));
+			System.out.println(req.getRemoteAddr().indexOf("192.168"));
 			System.out.println("====================");
 			System.out.println("====================");
-			if(!"0:0:0:0:0:0:0:1".equals(req.getRemoteAddr()) && !"192.168.0.1".equals(req.getRemoteAddr())) {
+			if(!"0:0:0:0:0:0:0:1".equals(req.getRemoteAddr()) && !"192.168.0.1".equals(req.getRemoteAddr()) && req.getRemoteAddr().indexOf("192.168") < 0) {
 				result = webMainService.access(params);
 			}
 			
@@ -63,5 +65,12 @@ public class WebMainController {
 		}
 		
 		return "JolTaMain";
+	}
+	
+	@RequestMapping(value="/developmentScreen/vue/main")
+	public String developmentScreenVue(Model model) {
+		
+		
+		return "/developmentScreen/vue/main";
 	}
 }

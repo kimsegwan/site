@@ -5,6 +5,51 @@
 <html>
 <head>
 </head>
+
+<style type="text/css">
+.screen_box {
+	width:60%;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.screen {
+	border:1px solid #999999;
+	float:left;
+	width:200px;;
+	height:250px;
+	margin:3px;
+	border-radius:2px;
+	-moz-box-shadow: 1px 3px 3px rgba(.5,.6,.8,.2);
+	-webkit-box-shadow: 1px 3px 3px rgba(.5,.6,.8,.2);
+	box-shadow: 1px 3px 3px rgba(.5,.6,.8,.2);
+}
+
+.screen img {
+	border-bottom:1px solid #cccccc;
+}
+
+.screen:hover {
+	cursor:pointer;
+}
+
+.screen_box .contents {
+	font-size:12px;
+	text-align:center;
+}
+
+.screen_box .contents div {
+	padding-top:5px;
+}
+
+.screen_box .title {
+	font-weight:bold;
+}
+
+.color_red_400 {
+	color:#FF3636;
+}
+</style>
 <script type="text/javascript" src="/js/JolTaScript.js"></script>
 <div class="main_content">
 	<div class="text_box">
@@ -14,9 +59,35 @@
 	<div class="road">
 		<span id="runrun"></span>
 	</div>
+	<div class="screen_box">
+		<div class="screen" onclick="javascript:screenMove('http://jolta.iptime.org:8086');">
+			<div>
+				<img src="/images/laravel/laravel.png" style="width:100%;height:180px;"/>
+			</div>
+			<div class="contents">
+				<div class="title">Laravel 화면</div>
+				<div>Laravel php</div>
+				<div class="color_red_400">보류중..</div>
+			</div>
+		</div>
+		
+		<div class="screen" onclick="javascript:screenMove('/developmentScreen/vue/main');">
+			<div>
+				<img src="/images/vue/vue_node.png" style="width:100%;height:180px;"/>
+			</div>
+			<div class="contents">
+				<div class="title">메인 화면</div>
+				<div>Vue.js, Node.js</div>
+				<div class="color_red_400">진행중..</div>
+			</div>
+		</div>
+		
+	</div>
 </div>
 <script type="text/javascript">
+	
 	var obj = document.querySelector('#runrun');
+	var resultValue = 0.1;
 	obj.style.right = '-70px';
 	var time = setInterval(function() {
 		
@@ -33,5 +104,25 @@
 		obj.style.right = (Number(obj.style.right.replace('px', ''), 0) + 10) + 'px'; 
 		
 	}, 500);
+	
+	var timeText = setInterval(function() {
+		var text = document.querySelector('.text_box');
+		
+		if(Number(text.style.opacity) < 0) {
+			resultValue = 0.1;
+		}
+		
+		if(Number(text.style.opacity) > 0.8) {
+			resultValue = -0.1;
+		}
+		
+		text.style.opacity = Number(text.style.opacity) + Number(resultValue);
+		
+	}, 200);
+	
+	function screenMove(str) {
+		//location.href=str;
+		window.open(str);
+	}
 </script>
 </html>

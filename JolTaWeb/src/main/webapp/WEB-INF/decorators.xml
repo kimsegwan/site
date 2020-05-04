@@ -4,6 +4,7 @@
 	
 	<excludes>
 		<pattern>/popup/*</pattern>
+		<pattern>/developmentScreen/**</pattern>
 	</excludes>
 	
 	<decorator name="sitemeshSample" page="layout.jsp">
